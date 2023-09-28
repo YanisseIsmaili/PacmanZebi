@@ -11,20 +11,20 @@ type infogame struct {
 }
 
 type caracter struct {
-	speedpacman float64
-	speedenemy float64
+	speedpacman int
+	speedenemy int
 	nuberenemy int
 	mazefile string
 }
 
-type sprite struct {
+/*type sprite struct {
 	img *ebiten.Image
 	faces map[byte]*ebiten.Image
 	x float64
 	y float64
 	speed float64
 	direction byte
-}
+}*/
 
 type screen struct {
 	ScreensizeX int
@@ -40,13 +40,16 @@ type mapgame struct {
 }
 
 type LevelInfo struct {
-	pacmanSpeed float64
-	enemySpeed float64
+	pacmanSpeed int
+	enemySpeed int
 	enemyNumber int
 	mazeFile string
 }
 
 func (m *mapgame)Init(level []LevelInfo){
+	for _, level := range level {
+		m.level = append(m.level, level)
+	}
 }
 
 func (l *LevelInfo)Init(pacmanSpeed int, enemySpeed int, enemyNumber int, mazeFile string){
