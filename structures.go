@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 type infogame struct {
 	score int
 	startgame bool
@@ -21,4 +17,3 @@ type caracter struct {
 	mazefile string
 }
 
-fmt.Println("Hello World")
