@@ -10,3 +10,10 @@ type infogame struct {
 	scoremax int
 }
 
+type caracter struct {
+	speedpacman int
+	speedenemy int
+	nuberenemy int
+	mazefile string
+}
+
