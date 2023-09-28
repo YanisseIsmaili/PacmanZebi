@@ -23,5 +23,3 @@ type sprite struct {
 	speed float64
 	direction byte
 }
-
-fmt
