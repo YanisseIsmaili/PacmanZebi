@@ -11,9 +11,8 @@ type infogame struct {
 }
 
 type caracter struct {
-	speedpacman int
-	speedenemy int
+	speedpacman float64
+	speedenemy float64
 	nuberenemy int
 	mazefile string
 }
-
