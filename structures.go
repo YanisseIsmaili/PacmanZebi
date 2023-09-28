@@ -32,3 +32,26 @@ type screen struct {
 }
 
 type spriteMap struct {
+	blocksize int
+}
+
+type mapgame struct {
+	level []LevelInfo
+}
+
+type LevelInfo struct {
+	pacmanSpeed float64
+	enemySpeed float64
+	enemyNumber int
+	mazeFile string
+}
+
+func (m *mapgame)Init(level []LevelInfo){
+}
+
+func (l *LevelInfo)Init(pacmanSpeed int, enemySpeed int, enemyNumber int, mazeFile string){
+	l.pacmanSpeed = pacmanSpeed
+	l.enemySpeed = enemySpeed
+	l.enemyNumber = enemyNumber
+	l.mazeFile = mazeFile
+}
