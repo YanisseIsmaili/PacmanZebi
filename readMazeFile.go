@@ -26,5 +26,3 @@ func readMazeFile(fileName string) []string {
 	return maze
 }
 
-fmt
-
