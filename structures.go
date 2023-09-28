@@ -18,9 +18,17 @@ type caracter struct {
 }
 
 type sprite struct {
+	img *ebiten.Image
+	faces map[byte]*ebiten.Image
 	x float64
 	y float64
 	speed float64
 	direction byte
 }
 
+type screen struct {
+	ScreensizeX int
+	ScreensizeY int
+}
+
+type spriteMap struct {
