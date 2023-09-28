@@ -1,5 +1,9 @@
 package main
 
+import (
+	"github.com/hajimehoshi/ebiten"
+)
+
 type infogame struct {
 	score int
 	startgame bool
@@ -17,14 +21,15 @@ type caracter struct {
 	mazefile string
 }
 
-/*type sprite struct {
+type Sprite struct {
 	img *ebiten.Image
 	faces map[byte]*ebiten.Image
 	x float64
 	y float64
 	speed float64
 	direction byte
-}*/
+	visibility bool
+}
 
 type screen struct {
 	ScreensizeX int
