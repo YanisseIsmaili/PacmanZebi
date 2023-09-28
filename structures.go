@@ -11,13 +11,13 @@ type infogame struct {
 }
 
 type caracter struct {
-	speedpacman float64
-	speedenemy float64
+	speedpacman int
+	speedenemy int
 	nuberenemy int
 	mazefile string
 }
 
-type sprite struct {
+/*type sprite struct {
 	img *ebiten.Image
 	faces map[byte]*ebiten.Image
 	x float64

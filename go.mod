@@ -1,6 +1,6 @@
 module pacman
 
-go 1.21.1
+go 1.23
 
 require (
 	github.com/go-gl/glfw v0.0.0-20221017161538-93cebf72946b // indirect
