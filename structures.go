@@ -16,3 +16,4 @@ type caracter struct {
 	nuberenemy int
 	mazefile string
 }
+ fmt.Println("test")
