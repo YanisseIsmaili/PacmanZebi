@@ -16,3 +16,11 @@ type caracter struct {
 	nuberenemy int
 	mazefile string
 }
+
+type sprite struct {
+	x float64
+	y float64
+	speed float64
+	direction byte
+}
+
