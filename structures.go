@@ -24,3 +24,4 @@ type sprite struct {
 	direction byte
 }
 
+fmt
