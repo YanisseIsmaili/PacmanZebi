@@ -43,6 +43,6 @@ type LevelInfo struct {
 	pacmanSpeed int
 	enemySpeed int
 	enemyNumber int
-	mazeFile string
+	mazeMap []string
 }
 
