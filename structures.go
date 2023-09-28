@@ -1,0 +1,12 @@
+package main
+
+type infogame struct {
+	score int
+	startgame bool
+	gameover bool
+	levelcomplete bool
+	level int
+	maze []string
+	scoremax int
+}
+
