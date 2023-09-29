@@ -1,6 +1,7 @@
 package main
 
 import (
+	rl "github.com/gen2brain/raylib-go/raylib"
 	"fmt"
 )
 
@@ -13,4 +14,20 @@ func main() {
 	level = append(level,level1,level2)
 	_map.Init(level)
 	fmt.Println(_map.level[0].mazeMap)
+
+	rl.InitWindow(800, 600, "rl Sprite Demo")
+    rl.SetTargetFPS(60)
+
+    sprite := createSprite("path_to_image.png", 1.0, true, 100, 100)
+
+    for !rl.WindowShouldClose() {
+        rl.BeginDrawing()
+
+        rl.ClearBackground(rl.RayWhite)
+        drawSprite(sprite)
+
+        rl.EndDrawing()
+    }
+
 }
+

@@ -40,7 +40,7 @@ func locateGameObjects(gameInfo GameInfo) GameObjects {
 
             switch char {
             case '0':
-                wall.Init("assets/wall.png", blockSize, true, x, y)
+                wall.Init("assets/pacman2.png", blockSize, true, x, y)
                 objects.mazeWall = append(objects.mazeWall, wall)
                 objects.mazeSprite[row][col] = wall
 
