@@ -1,7 +1,8 @@
 package main
 
 import (
-	"github.com/hajimehoshi/ebiten"
+	rl "github.com/gen2brain/raylib-go/raylib"
+	
 )
 
 type infogame struct {
@@ -22,13 +23,11 @@ type caracter struct {
 }
 
 type Sprite struct {
-	img *ebiten.Image
-	faces map[byte]*ebiten.Image
-	x float64
-	y float64
-	speed float64
-	direction byte
-	visibility bool
+texture    rl.Texture2D
+x          float32
+y          float32
+speed      float32
+visibility bool
 }
 
 type screen struct {
@@ -49,5 +48,33 @@ type LevelInfo struct {
 	enemySpeed int
 	enemyNumber int
 	mazeMap []string
+}
+
+type GameObjects struct{
+	mazeWall    []Sprite
+    mazeSprite  [][]Sprite
+    pacman      Pacman
+}
+
+type Ghost struct{
+	sprite []Sprite
+	aLive bool
+}
+
+type Pacman struct {
+	sprite []Sprite
+	aLive bool
+    faces map[byte]rl.Texture2D
+}
+
+type GameInfo struct {
+	maze [][]byte
+	score int
+	isStarted bool
+	isOver bool
+	isLevelComplete bool
+	level int
+	maxScore int
+	blockSize int
 }
 

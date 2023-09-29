@@ -1,41 +1,28 @@
 package main
 
 import (
-	"log"
-	"github.com/hajimehoshi/ebiten"
-	"github.com/hajimehoshi/ebiten/ebitenutil"
-
+    "log"
+   rl "github.com/gen2brain/raylib-go/raylib"
 )
 
-func createSprite(imgFile string, width int, height int, x float64, y float64) Sprite {
-    img, _ := ebiten.NewImage(width, height, ebiten.FilterDefault)
-    imgFromFile, _, err := ebitenutil.NewImageFromFile(imgFile, ebiten.FilterDefault)
-    originalWidth, originalHeight := imgFromFile.Size()
-    scaleX := float64(width)/float64(originalWidth)
-    scaleY := float64(height)/float64(originalHeight)
-    opts := &ebiten.DrawImageOptions{}
-    opts.GeoM.Scale(scaleX, scaleY)
-
-    img.DrawImage(imgFromFile, opts)
-
-	if err != nil {
-		log.Fatal(err)
-	}
-
-
-	return Sprite{
-	    img: img,
-	    visibility: true,
-	    x: x,
-	    y: y,
-	    speed: 1,
-	}
+func createSprite(imgPath string, speed float32, visibility bool, x float32, y float32) *Sprite {
+    sprite := &Sprite{}
+    sprite.Init(imgPath, speed, visibility, x, y)
+    return sprite
 }
 
-func (g *Game) Draw(screen *ebiten.Image) {
-	// Write your game's rendering.
+
+func drawSprite(sprite *Sprite) {
+    if sprite.visibility {
+        rl.DrawTexture(sprite.texture, int32(sprite.x), int32(sprite.y), rl.RayWhite)
+    }
 }
 
-func (g *ma) Layout(outsideWidth, outsideHeight int) (screenWidth, screenHeight int) {
-	return 320, 240
+func loadImage(imgPath string) rl.Texture2D {
+    if img := rl.LoadTexture(imgPath); img.Width > 0 && img.Height > 0 {
+        return img
+    } else {
+        log.Fatalf("Failed to load image: %s", imgPath)
+        return rl.Texture2D{}
+    }
 }
