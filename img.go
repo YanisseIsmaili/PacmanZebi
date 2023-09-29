@@ -1,8 +1,10 @@
 package main
 
 import (
-    "log"
-   rl "github.com/gen2brain/raylib-go/raylib"
+	"fmt"
+	"log"
+
+	rl "github.com/gen2brain/raylib-go/raylib"
 )
 
 func createSprite(imgPath string, speed float32, visibility bool, x float32, y float32) *Sprite {
@@ -20,6 +22,7 @@ func drawSprite(sprite *Sprite) {
 
 func loadImage(imgPath string) rl.Texture2D {
     if img := rl.LoadTexture(imgPath); img.Width > 0 && img.Height > 0 {
+        fmt.Println("nike baba")
         return img
     } else {
         log.Fatalf("Failed to load image: %s", imgPath)

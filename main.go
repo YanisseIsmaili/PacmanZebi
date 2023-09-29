@@ -18,7 +18,7 @@ func main() {
 	rl.InitWindow(800, 600, "rl Sprite Demo")
     rl.SetTargetFPS(60)
 
-    sprite := createSprite("path_to_image.png", 1.0, true, 100, 100)
+    sprite := createSprite("assets/wall.png", 1.0, true, 100, 100)
 
     for !rl.WindowShouldClose() {
         rl.BeginDrawing()
